@@ -159,16 +159,17 @@ header {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: center;
+                justify-content: space-between;
                 width: 100%;
+                height: 20rem;
                 border-radius: 1rem;
                 overflow: hidden;
                 border: 1px solid var(--branco-opaco);
                 text-decoration: none;
 
                 & .container-img {
-                    height: 10rem;
                     width: 100%;
+                    height: 10rem;
                     overflow: hidden;
 
                     & img {
@@ -179,6 +180,7 @@ header {
                 }
 
                 & .txt-card {
+                    height: 10rem;
                     padding: 1rem;
                     background-color: var(--cor-fundo);
                     color: var(--branco);
@@ -369,6 +371,108 @@ header {
                     opacity: .8;
                 }
             }
+        }
+    }
+}
+
+/* responsividade */
+@media (max-width: 600px) {
+
+    /* geral */
+    .interface {
+        padding: 1rem;
+    }
+
+    & .titulo {
+        & .interface {
+            & h2 {
+                font-size: 2.3rem;
+            }
+        }
+    }
+
+    body {
+        padding-bottom: 7rem;
+    }
+
+    /* header */
+    header {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        height: max-content;
+        width: 100%;
+        border-bottom: 0;
+        border-top: 1px solid var(--branco-opaco);
+
+        & .interface {
+            & .logo {
+                display: none;
+            }
+
+            & nav {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: .5rem;
+                width: 100%;
+
+                & a {
+                    display: flex;
+                    flex-direction: column;
+                    padding: .5rem;
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    /* jogos */
+    .titulo-jogos {
+        & .interface {
+            & .container-titulo {
+                & h2 {
+                    font-size: 2rem;
+                    text-align: center;
+                }
+
+                & p {
+                    font-size: 1.5rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    #jogos {
+        & .interface {
+            & .container-jogos {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+
+    /* imagens */
+    .container-imagens {
+        & .interface {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    /* contato */
+    .container-form {
+        & .interface {
+            & form {
+                width: 100%;
+            }
+        }
+    }
+
+    /* links */
+    .container-links {
+        & .interface {
+            grid-template-columns: repeat(1, 1fr);
         }
     }
 }
